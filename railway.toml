@@ -2,7 +2,7 @@
 
 [build]
 
-builder = "ml-service/Dockerfile"
+builder = "Dockerfile"
 
 [deploy]
 
