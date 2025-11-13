@@ -1,7 +1,3 @@
-#### `ml-service/Dockerfile`
-
-```dockerfile
-
 FROM python:3.11-slim
 
 Set working directory
@@ -50,4 +46,3 @@ Run application - use $PORT env var for Railway compatibility
 
 CMD uvicorn app.main:app --host 0.0.0.0 --port ${PORT}
 
-```
