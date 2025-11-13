@@ -1,4 +1,8 @@
+```dockerfile
+
 FROM python:3.11-slim
+
+Set working directory
 
 WORKDIR /app
 
@@ -22,13 +26,25 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 Copy application code
 
-COPY . .
+COPY app/ ./app/
+
+Create models directory
+
+RUN mkdir -p ./models
+
+Set environment variables
+
+ENV PYTHONUNBUFFERED=1
+
+ENV MODEL_PATH=./models/yolov8_bottles.pt
+
+ENV PORT=8000
 
 Expose port
 
 EXPOSE 8000
 
-Start server
+Run application - use $PORT env var for Railway
 
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD uvicorn app.main:app --host 0.0.0.0 --port ${PORT}
 
