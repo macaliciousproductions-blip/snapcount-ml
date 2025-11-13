@@ -1,0 +1,9 @@
+#### `ml-service/models/.gitkeep`
+
+```
+
+This file keeps the models directory in git
+
+Place your trained model weights here: yolov8_bottles.pt
+
+```
